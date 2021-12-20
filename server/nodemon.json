@@ -1,0 +1,8 @@
+{
+  "ext": "ts",
+  "watch": "src/",
+  "exec": "npm run build && npm start",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

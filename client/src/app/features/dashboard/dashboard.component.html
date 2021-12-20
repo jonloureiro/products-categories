@@ -1,0 +1,10 @@
+<header class="h-14 px-3 flex items-center">
+  <a routerLink="products" routerLinkActive="underline" class="nav-link">Produtos</a>
+  <a routerLink="categories" routerLinkActive="underline" class="nav-link">Categorias</a>
+  <div class="grow flex justify-end items-center">
+    <a routerLink="/" class="btn btn-danger">Sair</a>
+  </div>
+</header>
+<main class="grow bg-stone-800 p-3">
+  <router-outlet></router-outlet>
+</main>

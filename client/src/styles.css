@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply font-bold uppercase text-sm px-4 py-2 rounded transition-all select-none cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply shadow-lg text-stone-700 bg-sky-400 shadow-sky-400/30 hover:bg-sky-500 hover:shadow-sky-500/30 active:bg-sky-600 active:shadow-sky-600/30;
+  }
+
+  .btn-danger {
+    @apply shadow-lg text-stone-700 bg-rose-400 shadow-rose-400/50 hover:bg-rose-500 hover:shadow-rose-500/50 active:bg-rose-600 active:shadow-rose-600/50;
+  }
+
+  .link, .nav-link {
+    @apply font-bold decoration-sky-500 hover:text-sky-900;
+  }
+
+  .link {
+    @apply underline;
+  }
+
+  .nav-link {
+    @apply mr-3 text-xl select-none;
+  }
+
+  .input-text {
+    @apply mt-3 px-3 py-2 placeholder-stone-400 text-stone-700 bg-white rounded text-base  shadow outline-none focus:outline-none focus:ring ring-sky-500 w-full select-none;
+  }
+}
