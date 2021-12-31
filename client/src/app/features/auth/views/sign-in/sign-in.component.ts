@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../auth.service';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'sign-in-veiw',
@@ -7,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
     'class': 'flex flex-col'
   }
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
 
-  constructor() { }
+  signInForm = this.formBuilder.group({
+    email: ['email@email.com', Validators.email],
+    password: ['password', Validators.required],
+  });
 
-  ngOnInit(): void {
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly authService: AuthService
+  ) { }
+
+  ngOnInit (): void {
+  }
+
+  onSubmit () {
+    const { email, password } = this.signInForm.value
+    this.authService.signIn(email, password).subscribe(console.log)
   }
 
 }

@@ -15,7 +15,7 @@ app.use('/uploads', Express.static('uploads'))
 app.use(Express.json())
 app.use(Express.urlencoded({ extended: true }))
 app.use(cookieParser())
-app.use(new Routes(prisma).routes)
+app.use('/api', new Routes(prisma).routes)
 app.use(errorHandler);
 
 function errorHandler (error: Error, req: Request, res: Response, next: NextFunction) {
